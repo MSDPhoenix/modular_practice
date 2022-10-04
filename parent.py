@@ -26,15 +26,6 @@ print("B")
 for key in some_dictionary.keys():
     print(key)
     
-
-# local_variables_length = len(locals().items())
-# local_variables_tuples = locals().items()
-# local_variables_keys = locals().keys()
-# local_variables_values = locals().values()
-# print(type(local_variables_keys[0]))
-
-
-
 print("\nstart\n")
 
 for key in locals().keys():
@@ -45,15 +36,12 @@ print("\nfinish\n")
 #     print("C")    
 #     print(key)
 
+print("\nC\n")
 
+print(__name__)
 
-def loop():
-    x = 0
-    try:
-        print(locals().keys()[x])
-        x += 1
-        loop()
-    except:       
-        print("finished printing")
-        # break
+if __name__ == "__main__":
+    print("the file is being executed directly")
 
+else:
+    print(f"the file is being executed because it is being imported by another file.  The file is called; {__name__}")
